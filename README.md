@@ -43,10 +43,12 @@ For production passkeys behind a real domain, set `WEB_AUTH_ORIGIN` and
 ## Telegram and Scheduled Jobs
 
 Telegram support is optional. Set `TELEGRAM_BOT_TOKEN` and
-`TELEGRAM_ALLOWED_CHAT_ID` to enable it. Users can manage schedules with
-`/schedule`, `/jobs`, and `/unschedule`, and agent sessions can create schedules
-directly through the bundled `orchestrator-jobs` CLI instead of asking the human
-to type a command.
+`TELEGRAM_ALLOWED_CHAT_ID` to enable it. Users can manage recurring schedules
+with `/schedule`, one-time reminders with `/remind`, list work with `/jobs`,
+and remove work with `/unschedule`.
+
+Agent sessions can create schedules and reminders directly through the bundled
+`orchestrator-jobs` CLI instead of asking the human to type a command.
 
 Run the tick endpoint once per minute from cron, Kubernetes CronJob, or another
 scheduler:
